@@ -1,0 +1,9 @@
+local.properties
+/.idea
+/.settings
+/out
+/bin
+.DS_Store
+*.iml
+*.project
+.classpath
