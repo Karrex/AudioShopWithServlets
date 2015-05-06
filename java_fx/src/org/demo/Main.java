@@ -14,7 +14,7 @@ public class Main extends Application {
     private Label label;
     private Button button;
     private TextField textField;
-    private Label outInutLabel;
+    private Label outInputLabel;
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("FX Demo");
@@ -35,13 +35,13 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 String text = textField.getText();
-                outInutLabel.setText(text);
+                outInputLabel.setText(text);
             }
         });
         root.getChildren().add(button);
 
-        outInutLabel = new Label();
-        root.getChildren().add(outInutLabel);
+        outInputLabel = new Label();
+        root.getChildren().add(outInputLabel);
 
         Scene scene = new Scene(root, 720, 550);
         primaryStage.setScene(scene);
