@@ -25,9 +25,10 @@ public class UsersController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        users.add(new User("Jack", "Bill"));
-        users.add(new User("Jack", "Bob"));
-
+        users.add(new User("Jack", "Torrance"));
+        users.add(new User("Danny", "Torrance"));
+        users.add(new User("Wendy", "Torrance"));
+        users.add(new User("Dick", "Hallorann"));
         usersView.setItems(users);
     }
 
@@ -47,10 +48,7 @@ public class UsersController implements Initializable {
             User newUser = new User("", "");
             users.add(newUser);
             controller.setUser(newUser);
-            Stage stage = new Stage();
-            stage.setTitle("Create User");
-            stage.setScene(new Scene(root));
-            stage.show();
+            showNewWindow("Create User", root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,13 +63,17 @@ public class UsersController implements Initializable {
                 UserEditController controller =
                         fxmlLoader.getController();
                 controller.setUser(selectedUser);
-                Stage stage = new Stage();
-                stage.setTitle("Update User");
-                stage.setScene(new Scene(root));
-                stage.show();
+                showNewWindow("Update User", root);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void showNewWindow(String title, Parent root) {
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
