@@ -1,1 +1,1 @@
-include ':java_fx_fxml', ':java_fx', ':l_1', ':l_4', ':l_5', ':l_6'
+include ':java_fx_tt', ':java_fx_fxml', ':java_fx', ':l_1', ':l_4', ':l_5', ':l_6'

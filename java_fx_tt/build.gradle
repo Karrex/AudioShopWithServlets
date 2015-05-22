@@ -1,0 +1,13 @@
+buildscript {
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+            resources {
+                srcDirs = ["src"]
+                includes = ["**/*.fxml"]
+            }
+        }
+    }
+}
