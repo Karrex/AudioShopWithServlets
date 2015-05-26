@@ -1,0 +1,10 @@
+buildscript {
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+        }
+    }
+}
+
