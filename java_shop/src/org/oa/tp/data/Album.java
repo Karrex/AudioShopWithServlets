@@ -34,8 +34,20 @@ public class Album {
 	public long getId() {
 		return id;
 	}
-	
-	
-	
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Album album = (Album) o;
+
+		return id == album.id;
+
+	}
+
+	@Override
+	public int hashCode() {
+		return (int) (id ^ (id >>> 32));
+	}
 }
