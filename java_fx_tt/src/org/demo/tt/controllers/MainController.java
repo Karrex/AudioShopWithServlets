@@ -1,8 +1,5 @@
 package org.demo.tt.controllers;
 
-import java.io.File;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,6 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MultipleSelectionModel;
 import org.demo.tt.SceneLauncher;
+
+import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 	@FXML

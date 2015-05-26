@@ -1,5 +1,0 @@
-<?import javafx.scene.control.ListView?>
-<ListView fx:controller="org.demo.tt.controllers.MainController"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:id="filesListView">
-</ListView>
