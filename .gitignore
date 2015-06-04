@@ -9,3 +9,4 @@ local.properties
 .classpath
 /java_shop_web/nbproject
 /java_shop_web/build/
+/java_shop_web/dist/
