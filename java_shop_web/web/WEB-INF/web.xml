@@ -8,14 +8,21 @@
         <servlet-name>AlbumsViewServlet</servlet-name>
         <servlet-class>org.oa.tp.servlets.AlbumsViewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GenreServiceServlet</servlet-name>
+        <servlet-class>org.oa.tp.servlets.GenreServiceServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AlbumsServiceServlet</servlet-name>
         <url-pattern>/albums</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>AlbumsViewServlet</servlet-name>
         <url-pattern>/albums-view</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GenreServiceServlet</servlet-name>
+        <url-pattern>/genres</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

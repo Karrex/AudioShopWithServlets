@@ -21,10 +21,7 @@ public class Album {
     }
     
     public Album(String name, int year) {
-
-        this.id = 0;
-        this.name = name;
-        this.year = year;
+        this(1, name, year);        
     }
 
     public String getName() {

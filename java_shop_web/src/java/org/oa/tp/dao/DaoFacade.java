@@ -14,11 +14,15 @@ import org.oa.tp.data.Album;
 import org.oa.tp.data.Genre;
 
 public class DaoFacade {
+    
+         
+private static final String URL = "jdbc:mysql://localhost:3306/test";
+    private static final String USER_NAME = "root";
+    private static final String PASSWORD = "toor";
 
     private Connection connection;
     private AlbumDao albumDao;
-
-    private GenreDao genreDao = new GenreDao();
+    private GenreDao genreDao;
     private Statement statement;
 
     public DaoFacade(ServletContext context) {
@@ -41,6 +45,7 @@ public class DaoFacade {
             e.printStackTrace();
         }
         albumDao = new AlbumDao(statement, connection);
+        genreDao = new GenreDao(statement, connection);
     }
 
     public AbstractDao<Album> getAlbumDao() {

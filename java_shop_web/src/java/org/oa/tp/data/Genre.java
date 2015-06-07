@@ -15,6 +15,10 @@ public class Genre {
 		this.id = id;
 		this.name = name;
 	}
+        
+        public Genre(String name){
+            this(1, name);
+        }
 
 	public String getName() {
 		return name;
@@ -27,6 +31,9 @@ public class Genre {
 	public long getId() {
 		return id;
 	}
-	
-	
+
+    @Override
+    public String toString() {
+        return "Genre{" + "id=" + id + ", name=" + name + '}';
+    }	
 }

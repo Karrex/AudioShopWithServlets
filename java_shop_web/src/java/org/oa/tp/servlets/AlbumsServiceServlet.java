@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.oa.tp.servlets;
 
 import com.google.gson.Gson;
@@ -16,10 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.oa.tp.dao.DaoFacade;
 import org.oa.tp.data.Album;
 
-/**
- *
- * @author nikolay
- */
 public class AlbumsServiceServlet extends HttpServlet {
 
     private static final String PAREMETR_METHOD = "method";
@@ -111,5 +103,4 @@ public class AlbumsServiceServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-
 }

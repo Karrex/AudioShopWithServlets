@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package org.oa.tp.servlets;
 
 import java.io.IOException;
@@ -15,10 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.oa.tp.dao.DaoFacade;
 import org.oa.tp.data.Album;
 
-/**
- *
- * @author nikolay
- */
 public class AlbumsViewServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -39,8 +31,8 @@ public class AlbumsViewServlet extends HttpServlet {
             out.println("<tr>");
             out.println("<th>ID</th>");
             out.println("<th>NAME</th>");
-            out.println("<th>YEAR</th>");
-            out.println("<th>DELETE</th>");
+            out.println("<th width=\"10%\">YEAR</th>");
+            out.println("<th width=\"10%\">DELETE</th>");
             out.println("</tr>");
             for (Album album : albums) {
                 out.println("<tr>");
@@ -51,46 +43,26 @@ public class AlbumsViewServlet extends HttpServlet {
                 out.println("</tr>");
             }
             out.println("</table>");
-            out.println("<a href=\"create_album.html\">Create</a>");
+            out.println("<a href=\"create_album.html\"><button>Create</button></a>");
+            out.println("<input type=\"button\" onclick=\"history.back();\" value=\"Back\"/>");
+            out.println("<a href=\"index.html\"><button>Main</button></a>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
