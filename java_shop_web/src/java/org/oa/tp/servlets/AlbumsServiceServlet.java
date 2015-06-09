@@ -1,4 +1,3 @@
-
 package org.oa.tp.servlets;
 
 import com.google.gson.Gson;
@@ -28,10 +27,7 @@ public class AlbumsServiceServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         final String queryMethod = request.getParameter(PAREMETR_METHOD);
-
-        System.out.println("method " + queryMethod);
         response.setContentType("application/json;charset=UTF-8");
-
         DaoFacade facade = new DaoFacade(getServletContext());
         if (GET_ALL_METHOD.equalsIgnoreCase(queryMethod)) {
             List<Album> albums = facade.getAlbumDao().loadAll();

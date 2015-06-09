@@ -6,17 +6,25 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Create genre</title>
+        <title>Create author</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Create genre</h1>
-        <form action="genres" method="GET">
+        <h1>Create author</h1>
+        <form action="authors" method="GET">
             <input type="hidden" name="method" value="create"/>
-            Name:<br>
-            <input type="text" name="name">
+            First Name:<br>
+            <input type="text" name="firstName">
             <br>
+            Last Name:<br>
+            <input type="text" name="lastName">
+            <br>
+            Age:<br>
+            <input type="text" name="age">
+            <br>
+            Gender:<br>
+            <input type="text" name="gender">
             <br><br>
             <input type="submit" value="Save">
             <input type="button" onclick="history.back();" value="Back"/>

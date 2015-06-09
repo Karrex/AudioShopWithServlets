@@ -6,17 +6,22 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Create genre</title>
+        <title>Update album</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Create genre</h1>
-        <form action="genres" method="GET">
-            <input type="hidden" name="method" value="create"/>
+        <h1>Update album</h1>
+        <form action="albums" method="GET">
+            <input type="hidden" name="method" value="update"/>
+            Id:<br>
+            <input type="text" name="id">
+            <br>
             Name:<br>
             <input type="text" name="name">
             <br>
+            Year:<br>
+            <input type="text" name="year">
             <br><br>
             <input type="submit" value="Save">
             <input type="button" onclick="history.back();" value="Back"/>

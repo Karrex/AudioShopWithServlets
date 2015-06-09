@@ -1,4 +1,3 @@
-
 package org.oa.tp.servlets;
 
 import java.io.IOException;
@@ -19,7 +18,6 @@ public class AlbumsViewServlet extends HttpServlet {
         List<Album> albums = facade.getAlbumDao().loadAll();
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -27,12 +25,17 @@ public class AlbumsViewServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Albums</h1>");
+            out.println("<a href=\"create_album.html\"><button>Create</button></a>");
+            out.println("<a href=\"update_album.html\"><button>Update</button></a>");
+            out.println("<input type=\"button\" onclick=\"history.back();\" value=\"Back\"/>");
+            out.println("<a href=\"index.html\"><button>Main</button></a>");
             out.println("<table border=\"1\" style=\"width:100%\">");
             out.println("<tr>");
             out.println("<th>ID</th>");
             out.println("<th>NAME</th>");
             out.println("<th width=\"10%\">YEAR</th>");
             out.println("<th width=\"10%\">DELETE</th>");
+            out.println("<th width=\"10%\">UPDATE</th>");
             out.println("</tr>");
             for (Album album : albums) {
                 out.println("<tr>");
@@ -43,9 +46,6 @@ public class AlbumsViewServlet extends HttpServlet {
                 out.println("</tr>");
             }
             out.println("</table>");
-            out.println("<a href=\"create_album.html\"><button>Create</button></a>");
-            out.println("<input type=\"button\" onclick=\"history.back();\" value=\"Back\"/>");
-            out.println("<a href=\"index.html\"><button>Main</button></a>");
             out.println("</body>");
             out.println("</html>");
         }

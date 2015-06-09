@@ -11,25 +11,28 @@ import javax.servlet.ServletContext;
 import javax.xml.transform.stax.StAXSource;
 
 import org.oa.tp.data.Album;
+import org.oa.tp.data.Author;
 import org.oa.tp.data.Genre;
 
 public class DaoFacade {
-    
-         
-private static final String URL = "jdbc:mysql://localhost:3306/test";
+
+    private static final String URL = "jdbc:mysql://localhost:3306/test";
     private static final String USER_NAME = "root";
     private static final String PASSWORD = "toor";
 
     private Connection connection;
+    private Statement statement;
     private AlbumDao albumDao;
     private GenreDao genreDao;
-    private Statement statement;
+    private AuthorDao authorDao;
 
     public DaoFacade(ServletContext context) {
         try {
-            Class.forName("org.sqlite.JDBC");
+//            Class.forName("org.sqlite.JDBC");
+            Class.forName("com.mysql.jdbc.Driver");
             String path = context.getRealPath("test.db");
-            connection = DriverManager.getConnection("jdbc:sqlite:" + path);
+//            connection = DriverManager.getConnection("jdbc:sqlite:" + path);
+            connection = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,6 +49,7 @@ private static final String URL = "jdbc:mysql://localhost:3306/test";
         }
         albumDao = new AlbumDao(statement, connection);
         genreDao = new GenreDao(statement, connection);
+        authorDao = new AuthorDao(statement, connection);
     }
 
     public AbstractDao<Album> getAlbumDao() {
@@ -54,6 +58,10 @@ private static final String URL = "jdbc:mysql://localhost:3306/test";
 
     public AbstractDao<Genre> getGenreDao() {
         return genreDao;
+    }
+
+    public AbstractDao<Author> getAuthorDao() {
+        return authorDao;
     }
 
     public void closeSqlConnection() {
